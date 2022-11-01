@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- REACT API -->
+    <script
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <!-- REACT DOM -->
+    <script
+      src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <!-- BABEL COMPILER -->
+    <script
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const name = "Pembroke Welsh Corgi";
+      const imageURL =
+        "https://images.dog.ceo/breeds/pembroke/n02113023_6015.jpg";
+
+      const markup = React.createElement("div", { className: "row" }, [
+        React.createElement("div", { className: "card medium" }),
+        React.createElement("div", { className: "card-image" }),
+        React.createElement("img", { src: imageURL }),
+        React.createElement("div", { className: "list-item" }),
+        React.createElement("div", { className: "card-content" }),
+        React.createElement("p", { className: name }, [name]),
+      ]);
+
+      ReactDOM.render(markup, document.getElementById("root"));
+    </script>
+  </body>
+</html>
