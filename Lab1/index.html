@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -30,16 +30,17 @@
       const imageURL =
         "https://images.dog.ceo/breeds/pembroke/n02113023_6015.jpg";
 
+      //2つ目の引数が親で、３つ目がArrayになる(arrayにしなくてそのままnestingしてもいいけど)
       const markup = React.createElement("div", { className: "row" }, [
         React.createElement("div", { className: "card medium" }),
         React.createElement("div", { className: "card-image" }),
-        React.createElement("img", { src: imageURL }),
+        React.createElement("img", { src: imageURL }, null),
         React.createElement("div", { className: "list-item" }),
         React.createElement("div", { className: "card-content" }),
-        React.createElement("p", { className: name }, [name]),
+        React.createElement("p", null, name),
       ]);
 
       ReactDOM.render(markup, document.getElementById("root"));
     </script>
   </body>
-</html>
+</html> -->
