@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
-// import { ChallengeOne } from "../src/components/ChallengeOne";
-import ChallengeOne from "./components/ChallengeOne";
+import ChallengeTwo from "./components/ChallengeTwo";
+//import ChallengeOne from "./components/ChallengeOne";
 
 class App extends Component {
   render() {
@@ -9,7 +9,8 @@ class App extends Component {
       <div className="App">
         <h1>React Lab 3</h1>
         {/* Import Components (ChallengeOne and Challenge Two) here */}
-        <ChallengeOne />
+        {/* <ChallengeOne /> */}
+        <ChallengeTwo />
       </div>
     );
   }
