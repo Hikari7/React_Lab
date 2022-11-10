@@ -20,6 +20,7 @@ import Button from "./components/Button";
 
 //親コンポーネント
 
+
 class App extends Component {
   state = {
     email: "",
@@ -34,12 +35,14 @@ class App extends Component {
     console.log("aaa");
   };
 
+
   render() {
     return (
       <div className="App">
         <h1>React Lab 4</h1>
         <h1>Login</h1>
         <div className="Container">
+
           <Field label="Email" value={this.state.email} />
           <Field label="Password" value={this.state.password} />
 
@@ -47,6 +50,7 @@ class App extends Component {
             <Button label="Clear" onClick={this.state.handleClick} />
             <div className="Spacer" />
             <Button label="Login" handleClick={this.state.handleClick} />
+
           </div>
         </div>
       </div>
