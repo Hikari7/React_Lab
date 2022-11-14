@@ -1,32 +1,32 @@
 import React from "react";
-import { validateEmail } from "../util/validators";
+import { validateEmail, validatePassword } from "../util/validators";
 import { useState } from "react";
 
-function Button({ setDisabled, label, values }) {
-  console.log(label);
-  const [valid, setValid] = useState(false);
+function Button({ isDisabled, label, values, setValid, submitHandler }) {
+  // console.log(label);
 
-  const submitHandler = (email, password) => {
-    console.log(email);
-    const emailHint = validateEmail(email);
-    if (valid == false) {
-      !emailHint ? "Invalid email address" : "";
-    }
-    // const passwordHint = validatePassword(password);
-    // if (valid == false) {
-    //   passwordHint ? passwordHint : "";
-    // }
+  // const submitHandler = (email, password) => {
+  //   // console.log("aaaaa");
+  //   const emailHint = validateEmail(email);
+  //   //console.log(values.email);
+  //   {
+  //     values.email;
+  //   }
+  //   emailHint ? "Invalid email address" : "";
 
-    if (valid == true && valid === true) {
-      alert("Sign up successful!");
-    }
-  };
+  //   const passwordHint = validatePassword(password);
+  //   {
+  //     values.password;
+  //   }
+  //   passwordHint ? "Invalid email address" : "";
+
+  //   // if (values == true && setValid === true) {
+  //   //   alert("Sign up successful!");
+  //   // }
+  // };
+
   return (
-    <button
-      className="Button"
-      setDisabled={setDisabled}
-      onClick={submitHandler}
-    >
+    <button className="Button" isDisabled={isDisabled} onClick={submitHandler}>
       <div className="Button__Label">{label}</div>
     </button>
   );
