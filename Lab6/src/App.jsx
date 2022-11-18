@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import axios from "axios";
 import { dataReducer } from "./dataReducer";
 import { DataItems } from "./DataItems";
@@ -19,11 +19,15 @@ function App() {
   //const [error, setError] = useState();
 
   useEffect(() => {
-    getPostsData();
-
+    if (!data) {
+      getPostsData();
+    }
     console.log("Fetching...");
     console.log(data, "from useEffect");
   }, []);
+
+  //何回レンダリングされたかカウントできる
+  //  console.count();
 
   const getPostsData = () => {
     axios
@@ -38,28 +42,20 @@ function App() {
     console.log(data, "from getPostsData");
   };
 
-  if (!data) {
-    getPostsData();
-  }
-
   //dataはとれてる
-  console.log(data.error);
+  console.log(data.data);
 
   return (
     <div className="App">
       <h1>React Lab 6</h1>
       <ul className="msg">
-        {data.data.length > 0
-          ? data.data.map((element, index) => {
-              return (
-                <li className="list-item" key={index}>
-                  {element.title}
-                </li>
-              );
-            })
-          : data.error
-          ? data.error
-          : "Pipipi! now lodaing!"}
+        {data.data.length > 0 ? (
+          <DataItems childData={data.data} />
+        ) : data.error ? (
+          data.error
+        ) : (
+          "Pipipi! now lodaing!"
+        )}
       </ul>
       <button className="btn" onClick={() => getPostsData()}>
         Refetch

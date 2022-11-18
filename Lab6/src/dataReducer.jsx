@@ -21,7 +21,7 @@ export const dataReducer = (state, action) => {
         ...state,
         error: "Something went wrong",
       };
-    // default:
-    //   throw new Error();
+    default:
+      throw new Error();
   }
 };
